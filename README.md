@@ -63,3 +63,11 @@ pdo学习
     commit           提交事务
     rollBack         回滚事务、
     inTransaction    检测是否在一个内
+    
+## pdo提升数据库效率   pdo_improve.php
+
+    mysql直连效率更高
+    
+## pdo链接mysql对象 PdoMySQL.class.php
+    
+    从链接初始化到获取数据等各种功能
