@@ -71,3 +71,10 @@ pdo学习
 ## pdo链接mysql对象 PdoMySQL.class.php
     
     从链接初始化到获取数据等各种功能
+    
+## pdo功能实战 app项目
+
+    注册功能
+    注册用swiftmailer发送邮件
+    通过邮件激活账户
+    登录

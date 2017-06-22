@@ -161,22 +161,24 @@ class PdoMySQL{
 	 * @return Ambigous <boolean, unknown, number>
 	 */
 	public static function update($data,$table,$where=null,$order=null,$limit=0){
-		foreach($data as $key=>$val){
-			$sets.=$key."='".$val."',";
+        $sets = '';
+	    foreach($data as $key=>$val){
+			$sets .= $key . "='" . $val . "',";
 		}
 		//echo $sets;
 		$sets=rtrim($sets,',');
 		$sql="UPDATE {$table} SET {$sets} ".self::parseWhere($where).self::parseOrder($order).self::parseLimit($limit);
 		return self::execute($sql);
 	}
-	/**
-	 * 删除记录的操作
-	 * @param string $table
-	 * @param string $where
-	 * @param string $order
-	 * @param number $limit
-	 * @return Ambigous <boolean, unknown, number>
-	 */
+
+    /**
+     * 删除记录的操作
+     * @param string $table
+     * @param string $where
+     * @param string $order
+     * @param int|number $limit
+     * @return bool|unknown
+     */
 	public static function delete($table,$where=null,$order=null,$limit=0){
 		$sql="DELETE FROM {$table} ".self::parseWhere($where).self::parseOrder($order).self::parseLimit($limit);
 		return self::execute($sql);
